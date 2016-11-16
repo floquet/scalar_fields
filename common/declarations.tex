@@ -1,0 +1,109 @@
+%\usepackage{amsthm}
+\newtheorem{myDefinition}{Definition}
+\newtheorem{myTheorem}{Theorem}
+\newtheorem{myLemma}{Lemma}
+
+% other definitions
+\input{\fullpath/data}
+\input{\fullpath/delimiters}
+\input{\fullpath/derivatives}
+\input{\fullpath/figures}
+\input{\fullpath/"macro Zernike"}
+\input{\fullpath/"matrix basics"}
+\input{\fullpath/norms}
+\input{\fullpath/spaces}
+\input{\fullpath/table}
+
+% functions  --   --   --   --   --   --   --   --   --   --   --   --
+\newcommand{\pr}[0]      { \psi\! \paren{ r } }
+\newcommand{\prt}[0]     { \psi\! \paren{ r, \theta } }
+\newcommand{\si}[0]      { I \paren{ r } }
+\newcommand{\sib}[0]     { I_{\Sigma} }
+\newcommand{\ii}[0]      { \mathcal{I} \paren{ r } }
+\newcommand{\iil}[0]     { \mathcal{I}_{\Lambda} }
+\newcommand{\arccot}[0]  { \mathrm{arccot} }
+
+% matrices  --   --   --   --   --   --   --   --   --   --   --   --
+\newcommand{\A}[0]       { \mathbf{A} }
+\newcommand{\B}[0]       { \mathbf{B} }
+
+% stray commands  --   --   --   --   --   --   --   --   --   --   --   --
+\newcommand{\map}[1]     { \brac{T}^{-1}_{#1} }
+\newcommand{\part}[0]    { \mathcal{P}\brac{0, 1 - \Delta} }
+\newcommand{\ann}[0]     { \paren{\Sigma \Delta}^2 - \paren{(\Sigma -1) \Delta}^2 }
+\newcommand{\ssqrt}[0]   { \sqrt{\Delta( \tmod )} }
+\newcommand{\sssqrt}[0]  { \sqrt{\Delta( \tmtd )} }
+\newcommand{\ssssqrt}[0] { \sqrt{\Delta( \omd )} }
+
+\newcommand{\smeotm}[0]  { \sum_{k=1}^{\mu} }
+\newcommand{\intrvl}[0]  { \paren{ x_{k} - x_{k-1} } }
+\newcommand{\subint}[0]  { \brac{ x_{k-1}, x_{k} } }
+
+\newcommand{\omds}[0]    { \paren{ 1 - \Delta }^{2} }
+\newcommand{\somys}[0]   { \sqrt{1 - y^{2}} }
+\newcommand{\somdmys}[0] { \sqrt{\omds - y^{2}} }
+
+\newcommand{\mytan}[2]   { \arcsin \paren{ \frac{y_{#2}} {r_{#2}} } }
+\newcommand{\pyth}[2]    { \sqrt{ r_{#1}^{2} - y_{#2}^{2}} }
+\newcommand{\omd}[0]     { 1 - \Delta }
+\newcommand{\omtd}[0]    { 1 - 2\Delta }
+\newcommand{\tmod}[0]    { 2 -  \Delta }
+\newcommand{\tmtd}[0]    { 2 - 3\Delta }
+\newcommand{\core}[0]    { \arccos \paren{ \omd } - (\omd) \ssqrt }
+\newcommand{\aoneone}[0] { \half \paren{\core} }
+\newcommand{\oml}[0]     { 1 - \Lambda }
+
+\newcommand{\sr}[0]      { \rho\paren{\B} }
+
+\newcommand{\half}[0]    { \frac{1}{2} }
+\newcommand{\ombs}[0]    { 1 - b^{2} }
+\newcommand{\cost}[0]    { \sqrt{ \ombs } }
+\newcommand{\rt}[0]      { \sqrt{b^{2} + t^{2}(\ombs)} }
+\newcommand{\xpbs}[0]    { \sqrt{x_{1}^{2} + b^{2}} }
+
+\newcommand{\facts}[0]   { \paren{\paren{k-j}!}^{2} }
+\newcommand{\factss}[0]  { \paren{\paren{k+1}!}^{2} }
+\newcommand{\fraction}[0]{ \frac{\paren{2k-j}!} {j! \facts } }
+\newcommand{\miracle}[0] { \frac{k+1} {k+2} \frac{\paren{2k+1}!} { \factss } }
+\newcommand{\new}[0]     { \frac{1} {2(k+2)} \frac{(2k+2)!} {\factss} }
+\newcommand{\sign}[0]    { \paren{-1}^{j} }
+
+\newcommand{\csd}[0]     { \mu_{s}(r,\omega \cdot \hat{\omega}) }
+\newcommand{\scat}[0]    { \frac{1}{4\pi} \int_{4\pi} \csd I_{\nu}(s,\omega) d\hat{\omega} }
+
+\newcommand{\hg}[4]      { \ _{2} F_{1} \paren{ #1, #2; #3; #4 } }
+
+% bound angle
+\newcommand{\dtwo}[0]    { \overline{D}_{2}  }
+\newcommand{\disk}[0]    { \dtwo }
+
+% order
+\newcommand{\order}[1]   { \mathcal{o}\paren{#1} }
+\newcommand{\Order}[1]   { \mathcal{O}\paren{#1} }
+
+\newcommand{\mx}[2]      { \max\limits_{#1 \in \cmplx{ #2 }} }
+\newcommand{\mn}[2]      { \min\limits_{#1 \in \cmplx{ #2 }} }
+
+\newcommand{\mxxn}[0]    { \mx{x}{n} }
+\newcommand{\mnxn}[0]    { \mn{x}{n} }
+
+\newcommand{\mxball}[0]  { \max\limits_{\normt{x} = 1} }
+
+% is equal?
+\newcommand{\iseq}[0]    { \overset{?}{=} }
+
+% map A
+\newcommand{\mapa}[1]    { \overset{\A{#1}}{\mapsto} }
+
+% header
+\newcommand{\head}[1]    { $\A{}$ & $=$ & $\U{}$ & $\sig{}$ & $\V{*}$ }
+
+% spacings and such
+\newcommand{\wfour}[0]   {1.05in}
+
+% indexing
+\newcommand{\bandone}[0]   {$2\Delta$ & $3\Delta$}
+\newcommand{\bandtwo}[0]   {$\Delta$ & $2\Delta$}
+\newcommand{\bandthree}[0] {$0$ & $\Delta$}
+
+\endinput %-------------------------------

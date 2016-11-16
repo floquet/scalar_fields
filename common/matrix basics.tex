@@ -1,0 +1,140 @@
+% define the basic matrix
+\newcommand{\mat}[2]   {\left[\begin{array} {#1}#2 \end{array}\right]}
+\newcommand{\matp}[2]  {\left(\begin{array} {#1}#2 \end{array}\right)}
+%\newcommand{\matt}[2]  {{\mg{ \left[ }}\begin{array} {#1}#2 \end{array}{\mg{ \right] }}}
+\newcommand{\matt}[2]  { \glb \begin{array} {#1} #2 \end{array} \grb}
+
+\newcommand{\glb}[0]   {{\mg{ \Biggl[ }}}
+\newcommand{\grb}[0]   {{\mg{ \Biggr] }}}
+
+% determinant
+\newcommand{\dt}[2]    {\left|\begin{array} {#1}#2 \end{array}\right|}
+
+% trace
+\newcommand{ \tr }[1]  { \text{tr} \paren{ #1 } }
+
+% transpose
+\newcommand{ \tra }[1] { #1^{\mathrm{T}} }
+
+
+% basic matrices dim = 2
+\newcommand{ \rotation }[1]
+{
+    \mat{ rr }
+      {
+                  \cos #1 & -\sin #1 \\
+       \phantom{-}\sin #1 &  \cos #1
+      }
+}
+
+\newcommand{ \idtwo }[0]
+{
+    \mat{ cc }
+      {
+       1 & 0 \\
+       0 & 1
+      }
+}
+
+\newcommand{ \ztwo }[0]
+{
+    \mat{ cc }
+      {
+       0 & 0 \\
+       0 & 0
+      }
+}
+
+\newcommand{ \gztwo }[0]
+{
+    {\mg{ \ztwo }}
+}
+
+\newcommand{ \permutetwo }[0]
+{
+    \mat{ cc }
+      {
+       0 & 1 \\
+       1 & 0
+      }
+}
+
+\newcommand{ \rota }[0]
+{
+    \mat{ rr }
+      {
+          1 &    0 \\
+       \ps0 & \ps1
+      }
+}
+
+\newcommand{ \rotb }[0]
+{
+    \mat{ rr }
+      {
+          0 & -1 \\
+       \ps1 &  0
+      }
+}
+
+\newcommand{ \rotc }[0]
+{
+    \mat{ rr }
+      {
+      -1 &  0 \\
+       0 & -1
+      }
+}
+
+\newcommand{ \rotd }[0]
+{
+    \mat{ rr }
+      {
+        0 & \ps1 \\
+       -1 &    0
+      }
+}
+
+%% basic matrices dim = 3
+\newcommand{ \idthree }[0]
+{
+    \mat{ ccc }
+      {
+       1 & 0 & 0 \\
+       0 & 1 & 0 \\
+       0 & 0 & 1
+      }
+}
+
+\newcommand{ \permutethree }[0]
+{
+    \mat{ ccc }
+      {
+       0 & 0 & 1 \\
+       0 & 1 & 0 \\
+       1 & 0 & 0
+      }
+}
+
+% rotation matrix
+\newcommand{ \rot }[1]
+{
+    \mat{ cr }
+      {
+       \cos #1 & -\sin #1 \\
+       \sin #1 &  \cos #1
+      }
+}
+% transpose rotation matrix
+\newcommand{ \rott }[1]
+{
+    \mat{ rc }
+      {
+        \cos #1 & \sin #1 \\
+       -\sin #1 & \cos #1
+      }
+}
+
+
+
+\endinput

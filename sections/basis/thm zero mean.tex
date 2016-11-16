@@ -1,0 +1,108 @@
+\begin{myTheorem}[\label{thm:zero mean}Mean value for Zernike expansions]
+Given the Zernike polynomial expansion over $\dtwo$ in \eqref{eq:Zernike expansion} the mean value of the function $\prt$ is given by
+  % % % EQUATION
+  \begin{equation}
+    \inner{\prt}_{\dtwo} = \alpha_{0,0}.
+    \label{eq:assertion}
+  \end{equation}
+  % % %
+\end{myTheorem}
+  %  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+\begin{proof}
+Define the mean value of the function as
+  % % % EQUATION
+  \begin{equation}
+    \inner{\prt}_{\dtwo} = \frac{\int_{\dtwo}\prt rdrd\theta} {\int_{\dtwo}rdrd\theta}.
+  \end{equation}
+  % - -  e q u a t i o n
+Since the radial polynomials and exponential terms are continuous functions on a compact interval we may safely interchange the order of summation and integration:
+  \begin{equation}
+    \int_{\dtwo}\prt rdrd\theta = \sum_{n=0}^{d} \sum_{m=\odot}^{n(2)} \alpha_{n,m} \int_{0}^{1} R_{n}^{m}(r) \int_{0}^{2\pi} e^{i m \theta} d\theta r dr
+  \end{equation}
+  % - -
+where we allow the limit $d \to \infty$.
+
+This proof resolves two different regimes for the angular velocity $m\in\mathbb{N}$: the first $m>0$, the second $m=0$. This distinction arises from the integration of the angular variable:
+  % % % EQUATION
+  \begin{equation}
+    \int_{0}^{2\pi} e^{im\theta} d\theta = 
+    \begin{cases}
+      0 & m \ne 0 \\
+      2\pi & m = 0
+    \end{cases} .
+  \end{equation}
+  % % %
+The expansion terms corresponding to values of $m>0$ do not contribute to mean value. We now address the rotationally invariant terms where $m=0$ and here too we find a distinction this time for $k=0$ and $k\ge1$. The assertion in \eqref{eq:assertion} is now restated for $k\in\mathbb{N}$ as
+  % - -  e q u a t i o n
+  \begin{equation}
+    \int_{0}^{1} R_{2k}^{0}(r) r dr = 
+      \begin{cases}
+        \half & k = 0 \\
+        0 & k\ge 1
+      \end{cases}
+  \end{equation}
+  % - -
+The case of $k=0$ is trivial and we must exhibit the veracity of the claim for $k\ge 1$.
+Integrate the terms in \eqref{eq:recursion}.
+  % % % EQUATION
+  \begin{equation}
+    \fraction \int_{0}^{1} r^{2(k-j)} r dr = 
+    \frac{1} {2\paren{k-j+1}} \fraction
+  \end{equation}
+  % % %
+The integral for each polynomial of order $2k$ is reduced to the sum
+  % % % EQUATION
+  \begin{equation}
+    \mathcal{S}_{k} = \int_{0}^{1} R_{2k}^{0}(r) r dr = \sum_{j=0}^{k} \frac{(-1)^{j}} {2(k-j+1)} \fraction
+   \label{eq:sk}
+  \end{equation}
+  % % %
+and we employ induction to prove $\mathcal{S}_{k} = 0$ for $k\ge1$. The base case is  $\mathcal{S}_{1} = \half - \half = 0$. For $k>1$ we assume $\mathcal{S}_{k} = 0$ and exploit this to establish $\mathcal{S}_{k+1} = 0$. The proof strategy is to demonstrate that $\mathcal{S}_{k} + \mathcal{S}_{k+1} = 0$.
+
+The sum of consecutive sequences is
+  % - -  e q u a t i o n
+  \begin{equation}
+    \mathcal{S}_{k} + \mathcal{S}_{k+1} = 
+    \new +
+    \sum_{j=0}^{k} \sign \paren{1-\frac{2(k-j)} {j+1}} \fraction 
+    = 0
+  \label{eq:consecutive}
+  \end{equation}
+  % - -
+which implies, after simplification of the summation terms, that
+  % - -  e q u a t i o n
+  \begin{equation}
+    \new =
+    -\sum_{j=0}^{k} \sign \frac{\paren{k-j} \paren{k-j+1} \paren{2k-j}!} {\paren{j+1}!\facts} .
+  \label{eq:zerosum}
+  \end{equation}
+  % - -
+The sum in \eqref{eq:zerosum} can be evaluated:
+  % - -  e q u a t i o n
+  \begin{equation}
+     \sum_{j=0}^{k} \sign \frac{\paren{k-j} \paren{k-j+1} \paren{2k-j}!} {\paren{j+1}!\facts}  = -\miracle.
+  \end{equation}
+  % - -
+With modest manipulation we connect to \eqref{eq:consecutive}:
+  % - -  e q u a t i o n
+  \begin{equation}
+    \miracle =
+    \new.
+  \end{equation}
+  % - -
+This substantiates $\mathcal{S}_{k} + \mathcal{S}_{k+1} = 0$, therefore $\mathcal{S}_{k+1} = 0$. Therefore \eqref{eq:sk} is valid, therefore
+  % - -  e q u a t i o n
+  \begin{equation}
+    \int_{0}^{1} R_{2k}^{0}(r)rdr = 0, \qquad k \ge 1.
+  \end{equation}
+  % - -
+This establishes
+  % - -  e q u a t i o n
+  \begin{equation}
+    \sum_{k=0}^{\infty} \paren{\alpha_{2k,0} \int_{0}^{1} R_{2k}^{0}(r)rdr} = \half \alpha_{00}
+  \end{equation}
+  % - -
+which confirms the contention in \eqref{eq:assertion}.
+\end{proof}
+
+\endinput %  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .

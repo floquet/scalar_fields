@@ -1,0 +1,36 @@
+\begin{myTheorem}[Recursion]
+The integrals in \eqref{eq:family Y} can be generated using
+  % % % EQUATION
+\begin{equation}
+  \begin{split}
+    \mathcal{Y}_{0}(b)   &= \cost \\
+    \mathcal{Y}_{n+2}(b) &= \paren{\paren{n + 2} \frac{b^{2}}{\cost} \mathcal{Y}_{n}(b) + 1} \frac{\cost}{n + 3}, \qquad n = 2, 4, 6, \dots.
+  \end{split}
+\label{eq:recursion Y}
+\end{equation}
+  % % % EQUATION
+\end{myTheorem}  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+\begin{proof}  %  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +
+The base case $\mathcal{Y}_{0}(b)$ is trivial; consider $n=2,4,\dots$. Attack the integral
+  % % % EQUATION
+  \begin{equation}
+    \mathcal{Y}_{n}(b) = \int_{0}^{\cost} \paren{ \xpbs }^{n} dx_{1}
+  \end{equation}
+  % % %
+using integration by parts, $\int udv = uv - \int vdu$, where 
+  % - -  e q u a t i o n
+  \begin{equation}
+    u = \paren{ \xpbs }^{n}, \quad dv = dx_{1}
+  \end{equation}
+  % - -
+which leads to the identity
+  % % % EQUATION
+  \begin{equation}
+    \int_{0}^{\cost} \paren{ \xpbs }^{n} dx_{1} = \cost - n 
+    \int_{0}^{\cost} x_{1}^{2} \paren{ \xpbs }^{n-2} dx_{1}.
+  \end{equation}
+  % % %
+Let the multiplicative factor $x_{1}^{2} = x_{1}^{2} + b^{2} - b^{2}$ and shift the index $n$ up by 2 to recover \eqref{eq:recursion Y}.
+\end{proof}
+
+\endinput %-------------------------------

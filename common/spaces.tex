@@ -1,0 +1,60 @@
+% bys
+\newcommand{\by}[2]      {#1 \times #2}
+\newcommand{\byy}[1]     {#1 \times #1}
+\newcommand{\bymn}[0]    {\by{m}{n}}
+\newcommand{\bymm}[0]    {\byy{m}}
+\newcommand{\bynn}[0]    {\byy{n}}
+\newcommand{\bynm}[0]    {\by{n}{m}}
+\newcommand{\bymr}[0]    {\by{m}{\rho}}
+\newcommand{\byrn}[0]    {\by{\rho}{n}}
+
+% vector spaces
+\newcommand{\real}[1]    {\mathbb{R}^{#1}}
+\newcommand{\cmplx}[1]   {\mathbb{C}^{#1}}
+\newcommand{\either}[1]  {\cmplx{#1}}
+\newcommand{\ir}[0]      {\in\real{}}
+\newcommand{\ic}[0]      {\in\cmplx{}}
+\newcommand{\icm}[0]     {\in\cmplxm}
+\newcommand{\icn}[0]     {\in\cmplxn}
+\newcommand{\icmn}[0]    {\in\cmplxmn}
+\newcommand{\irmn}[0]    {\in\realmn}
+\newcommand{\icmnr}[0]   {\in\cmplxmnr}
+\newcommand{\ints}[0]    {\mathbb{Z}}
+\newcommand{\natnum}[0]  {\mathbb{N}}
+
+\newcommand{\iints}[0]   {\in \mathbb{Z}}
+\newcommand{\inatnum}[0] {\in \mathbb{N}}
+
+\newcommand{\realall}[3] {\real{\by{#1}{#2}}_{#3} }
+\newcommand{\cmplxall}[3]{\cmplx{\by{#1}{#2}}_{#3} }
+
+\newcommand{\realn}[0]   {\real{n}}
+\newcommand{\realm}[0]   {\real{m}}
+\newcommand{\realmn}[0]  {\real{\bymn}}
+\newcommand{\realnn}[0]  {\real{\byy{n}}}
+\newcommand{\realmm}[0]  {\real{\byy{m}}}
+\newcommand{\realmmr}[0] {\real{\byy{m}}_{\rho}}
+\newcommand{\realmmm}[0] {\realmm_{m}}
+
+\newcommand{\cmplxn}[0]  {\cmplx{n}}
+\newcommand{\cmplxm}[0]  {\cmplx{m}}
+\newcommand{\cmplxnn}[0] {\cmplx{\byy{n}}}
+\newcommand{\cmplxmm}[0] {\cmplx{\byy{m}}}
+\newcommand{\cmplxmn}[0] {\cmplx{\bymn}}
+\newcommand{\cmplxmr}[0] {\cmplx{\bymr}}
+\newcommand{\cmplxrn}[0] {\cmplx{\byrn}}
+\newcommand{\cmplxmnr}[0]{\cmplx{\bymn}_{\rho}}
+\newcommand{\cmplxmmm}[0]{\cmplxmm_{m}}
+\newcommand{\cmplxmnm}[0]{\cmplxmn_{m}}
+\newcommand{\cmplxnnr}[0]{\cmplxnn_{\rho}}
+\newcommand{\cmplxmnn}[0]{\cmplxmn_{n}}
+
+% spans
+\newcommand{\spn}[1]     {\text{sp\,} \lst{ #1 }}
+
+% spans
+\newcommand{\spaceL}[0]  { L^{2}\!\paren{\overline{D_{2}}} }
+\newcommand{\spacel}[0]  { l^{2}\!\paren{\overline{D_{2}}} }
+
+
+\endinput %-------------------------------

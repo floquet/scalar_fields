@@ -1,0 +1,141 @@
+\begin{myLemma}[Band dominance]  
+Given a unit disk partitioned into $n\ge1$ bands and limbs, the sectors of the outer band are ordered according to
+  % = =  e q u a t i o n
+  \begin{equation}
+    A_{11} > A_{21} > \cdots > A_{n1}.
+  \end{equation}
+  % = =
+\end{myLemma}  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+\begin{proof}  %  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +  +
+The proof is broken into two parts. The first is to establish the special case $A_{11}>A_{21}$ then to establish the $A_{k,1}>A_{k+1,1}$ for $2\le k \le n-2$.
+
+\textbf{Part I} $A_{11} > A_{21}$:
+Call upon equations \eqref{eq:area delta} and \eqref{eq:area I} (with $y_{1} = \omtd$ and $y_{2} = \omd$; $r_{1} = \omd$ and $r_{2} = 1$):
+%  % = =  e q u a t i o n
+  \begin{multline}
+    \paren{\omd}^{2} \paren{\arcsin\paren{\frac{\omtd}{\omd}} -  \frac{\pi}{2}} + \arccos\paren{\omd} - \arcsin \paren{\omd} \\ +\arcsin \paren{\omtd} >
+    \paren{\omtd} \paren{\sssqrt - 2 \ssssqrt}
+  \end{multline}
+  % = =
+The right-hand side is negative for $0<\Delta<\half$ so it will suffice to show that the left hand side, $f(\Delta)$, is positive over the same domain. A Maclauren expansion produces a lead term of 
+  % = =  e q u a t i o n
+  \begin{equation}
+    f(\Delta) = \paren{\frac{3}{\sqrt{2}} - 1} \sqrt{\Delta} + \mathcal{O}(\Delta^{3/2}) .
+  \end{equation}
+  % = =
+Near the origin this function behaves as the square root, increasing from 0 at the origin. To resolve the behavior of the function away from the origin examine the derivative
+  % = =  e q u a t i o n
+  \begin{equation}
+    f'(\Delta) = \frac{2}{\ssqrt} + \frac{\omd}{\sssqrt} - \frac{1}{\ssssqrt} - 2 (\omd ) \arccos \paren{\frac{\omtd}{\omd}}
+  \end{equation}
+  % = =
+which is positive until $\Delta \approx 0.41$ at which point it becomes negative. The function value at the boundary point is
+  % = =  e q u a t i o n
+  \begin{equation}
+    f \paren{\half} =\frac{7\pi}{24} > 0.
+  \end{equation}
+  % = =
+Thus $f(\Delta)> 0$ on the domain $\Delta \in (0,1/2]$.
+
+\textbf{Part II} $A_{k,1} > A_{k+1,1}$: Exploit the monotonicity of the sector width using a common partition for the Riemann integral.
+
+Let $P=\lst{x_{0}, x_{1}, \dots, x_{\mu}}$ be a partition of the interval $\brac{0,\Lambda}$ such that
+%%%
+\begin{equation}
+  0 = x_{0} < x_{1} < \cdots < x_{\mu-1} < x_{\mu} = \Lambda
+\end{equation}
+%%%
+with $\mu\ge2$. Define the sector width as
+%%%
+\begin{equation}
+  w(y) = \somys - \somdmys, \qquad 0 \le y \le \oml .
+\end{equation}
+%%%
+Inspection of the derivative
+%%%
+\begin{equation}
+  w'(y) = \frac{y}{\somdmys} - \frac{y}{\somys}
+\end{equation}
+%%%
+establishes that $w(y)$ increases monotonically on the domain $0 \le y \le \oml$.
+
+Define the subdomain of the sectors (why?) as
+%%%
+\begin{equation}
+  y_{\Lambda} = \lst{y\ir:(n-\Lambda)\Delta \le y \le (n-\Lambda+1)\Delta} .
+\end{equation}
+%%%
+Let $t_{k}$ be a point in the subinterval $\brac{x_{k-1},x_{k}}$. The Riemann sum over the subdomain $\omega_{\Lambda,1}$ is
+%%%
+\begin{equation}
+  S_{\Lambda} (P,w) = \smeotm w\paren{ (n-\Lambda)\Delta + t_{k} } \intrvl
+\end{equation}
+%%%
+We will show $S_{\Lambda} (P,w) > S_{\Lambda+1} (P,w)$.
+
+Define the numbers
+\begin{equation}
+  \begin{split}
+    M_{\Lambda,k}(P,w) 
+      &= \sup \lst{w\paren{ (n-\Lambda)\Delta+x }: x \in \subint } = w\paren{ (n-\Lambda)\Delta+x_{k} }, \\
+    m_{\Lambda,k}(P,w) &= \inf \lst{w\paren{ (n-\Lambda)\Delta+x }: x \in \subint } = w\paren{ (n-\Lambda)\Delta+x_{k-1} }. 
+  \end{split}
+\end{equation}
+The upper and lower Riemann sums for the partition $P$ are
+\begin{equation}
+  \begin{split}
+    U_{\Lambda}(P,w) &= \smeotm M_{\Lambda,k}(P,w) \intrvl, \\
+    L_{\Lambda}(P,w) &= \smeotm m_{\Lambda,k}(P,w) \intrvl.
+  \end{split}
+\end{equation}
+Since $w(y)$ increases monotonically on $\brac{0,1-\Lambda}$ we can state that for any $t_{k}\in\subint$
+%%%
+\begin{equation}
+  m_{\Lambda,k}(P,w) \le w\paren{ (n-\Lambda)\Delta + t_{k} }\le M_{\Lambda,k}(P,w)
+\end{equation}
+%%%
+which implies
+%%%
+\begin{equation}
+  L_{\Lambda}(P,w) \le S_{\Lambda}(P,w) \le U_{\Lambda}(P,w).
+\end{equation}
+%%%
+Because the arguments are ordered
+%%%
+\begin{equation}
+  (n-\Lambda)\Delta + x_{k-1} > (n-\Lambda-1)\Delta + x_{k}
+\end{equation}
+%%%
+the functions are ordered
+%%%
+\begin{equation}
+  w\paren{ (n-\Lambda)\Delta + x_{k-1} } > w\paren{ (n-\Lambda-1)\Delta + x_{k} }
+\end{equation}
+%%%
+which implies
+%%%
+\begin{equation}
+  m_{\Lambda}(\omega) > M_{\Lambda+1}(\omega)
+\end{equation}
+%%%
+which implies
+%%%
+\begin{equation}
+  L_{\Lambda}(P,w) > U_{\Lambda+1}(P,w).
+\end{equation}
+%%%
+Call $\mathcal{P}\brac{0,\Lambda}$ the set of all partitions with at least two subintervals. Then we see that for any $P\in\mathcal{P}\brac{0,\Lambda}$
+%%%
+\begin{equation}
+  S_{\Lambda}(P,w) > S_{\Lambda+1}(P,w)
+\end{equation}
+%%%
+which confirms
+%%%
+\begin{equation}
+  A_{\Lambda,1} > A_{\Lambda+1,1}, \qquad \Lambda = 2, \dots, n-1 .
+\end{equation}
+%%%
+\end{proof}
+
+\endinput %-------------------------------

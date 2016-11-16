@@ -1,0 +1,16 @@
+\begin{theorem}[Smallest eigenvalue]
+In the limit $n\to\infty$, the smallest eigenvalue approaches 0 quadratically is
+  \begin{equation*}   %  =   =   =   =   =
+   %\begin{split}
+      \lim_{n\to\infty} \lambda_{n} = n^{-2}.
+   %\end{split}
+   %\label{eq:}
+  \end{equation*}
+\label{thm:smallest eigenvalue}
+\end{theorem}
+%  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %
+\begin{proof}
+As the $\B{}$ matrix is lower triangular, the eigenvalues are on the diagonal. By the diagonal dominance theorem in \ref{eq:limb dom}, the value of the smallest eigenvalue corresponds to $b_{nn}$. Refer to \eqref{eq:area I} using $\paren{r_{1}, r_{2}} = \paren{1, 1 - \Delta}$, $\paren{y_{1}, y_{2}} = \paren{\Delta,0}$ and apply the limit.
+\end{proof}
+
+\endinput %  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .

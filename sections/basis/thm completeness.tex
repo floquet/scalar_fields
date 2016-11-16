@@ -1,0 +1,25 @@
+\begin{theorem}[\label{thm:completeness}Completeness]
+The Zernike polynomial set with angular frequency $m=0$ is dense in the space of rotationally invariant functions in $\dtwo$ with respect to the uniform norm.
+\label{th:zernike}
+\end{theorem}
+%  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %  %
+\begin{proof}
+From \eqref{eq:recursion} the recursion relationship for this reduced set is
+  % - -  e q u a t i o n
+  \begin{equation}
+    R_{2k}^{0}(r) = \sum_{j=0}^{k} \paren{-1}^{j} \fraction r^{2(k-j)}, \qquad k= 0,1,2,\dots
+  \end{equation}
+  % - -
+
+The coefficients are positive and never 0 which implies that the polynomial of order $n$ is a function of the form 
+$$R_{n}^{0}(r) = a_{0}+a_{2}r^{2}+\dots+a_{n}r^{n}$$
+where $a_{2k}>0$, $k=0,1,2,\dots,n$. From this we have an equivalence between the span $S$ of the Zernike set and $S'$ of the even monomials:
+%
+$$\spn{R_{2k}^{0}(r)}_{k=0}^{n} = \spn{r^{2k}}_{k=0}^{n}.$$
+%
+This relationship holds in the limit $n\to\infty$. Therefore the Zernike polynomial set with angular frequency $m=0$ is spanned by the set of even polynomials in $r$. The sum of the inverse of these monomial powers diverges
+$$\lim_{n\to\infty}\sum_{k=1}^{n}\frac{1}{2k}\to\infty.$$
+By the \ms theorem for $\dtwo$, the closed span $\overline{S'}$ is dense in $\spaceL$, and hence by equivalence so is $\overline{S}$.
+\end{proof}
+
+\endinput %  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
